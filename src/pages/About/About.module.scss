@@ -1,0 +1,30 @@
+.root {
+  background: url(../../assets/icons/background-loso.png);
+  padding-bottom: 95px;
+  .container {
+    padding: 48px 108px 170px 108px;
+    position: relative;
+    background: #8f86f5;
+    color: #ffffff;
+    border-radius: 20px;
+    h1 {
+      font-family: Montserrat;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 49px;
+      margin-bottom: 21px;
+    }
+    p {
+      font-family: Montserrat;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 30px;
+      margin-bottom: 26px;
+    }
+    img {
+      position: absolute;
+      top: -17px;
+      right: 200px;
+    }
+  }
+}
