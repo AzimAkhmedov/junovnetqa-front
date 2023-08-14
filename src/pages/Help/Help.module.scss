@@ -1,0 +1,30 @@
+.root {
+  .info {
+    padding-top: 50px;
+    .banner {
+      background: #ffffff;
+      color: #000;
+      border-radius: 20px;
+      padding: 45px 90px 122px 90px;
+      h2 {
+        font-size: 35px;
+        font-weight: 900;
+        line-height: 43px;
+        text-align: right;
+      }
+      p {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 30px;
+        font-family: Montserrat;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        padding: 0;
+      }
+    }
+  }
+}
