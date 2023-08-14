@@ -1,0 +1,25 @@
+.headerContainer {
+  padding-top: 50px;
+  margin-bottom: 65px;
+  ul {
+    display: flex;
+    gap: 150px;
+    list-style: none;
+    li {
+      a {
+        text-decoration: none;
+        border: 2px solid #000;
+        padding: 10px 40px;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 25px;
+        font-weight: 900;
+      }
+      .active {
+        background: #f0f356;
+        border: none;
+        border-radius: 10px;
+      }
+    }
+  }
+}
