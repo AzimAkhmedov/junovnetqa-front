@@ -1,47 +1,49 @@
-import React from "react";
+import { useEffect } from "react";
 import s from "./Home.module.scss";
-import { Card } from "./components";
-const data = [
-  {
-    text: "нагрузочное тестирование",
-  },
-  {
-    text: "ручное тестирование",
-  },
-  {
-    text: "backend разработчик",
-  },
-  {
-    text: "frontend разработчик",
-  },
-  {
-    text: "разработка на Python",
-  },
-  {
-    text: "разработка на Java",
-  },
-  {
-    text: "data science",
-  },
-  {
-    text: "fullstack разработчик",
-  },
-];
+import { Card, Layout } from "./components";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { getAllJobs } from "../../store/jobs";
+
 const Home = () => {
+  const dispatch = useAppDispatch();
+  const { loading, error, errorMessage, jobs } = useAppSelector(
+    (state) => state.jobs
+  );
+  useEffect(() => {
+    dispatch(getAllJobs());
+  }, []);
+
+  if (loading) {
+    return (
+      <Layout>
+        <h1>Загрузка...</h1>
+      </Layout>
+    );
+  }
+
+  if (error) {
+    return (
+      <Layout>
+        <h1>Ошибка! {errorMessage}</h1>
+      </Layout>
+    );
+  }
+
   return (
     <div className={s.root}>
       <div className="container">
         <h1>Самые актуальные прфессии в IT на сегодняшний день!</h1>
       </div>
-      <div className={s.content}>
-        <div className="container">
-          <div className={s.layout}>
-            {data.map((e, i) => (
-              <Card text={e.text} key={i} />
-            ))}
-          </div>
+
+      <Layout>
+        <div className={s.layout}>
+          {jobs.length ? (
+            jobs.map((e, i) => <Card text={e.job_title} key={i} />)
+          ) : (
+            <h3>К сожалению, пока пусто(</h3>
+          )}
         </div>
-      </div>
+      </Layout>
     </div>
   );
 };
